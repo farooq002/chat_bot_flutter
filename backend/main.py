@@ -4,15 +4,20 @@ from fastapi.responses import JSONResponse
 import shutil
 import os
 import wave
-import whisper
+# import whisper
+from faster_whisper import WhisperModel
+
 import tempfile
 import time
 
 app = FastAPI()
 
-# Function to load model with retry and fallback
 
-WHISPER_MODEL = whisper.load_model("medium")
+WHISPER_MODEL = WhisperModel(
+    "medium",
+    device="cpu",
+    compute_type="int8"
+)
 
 def transcribe_audio_with_whisper(audio_path: str, language: str = "ur") -> str:
     """
