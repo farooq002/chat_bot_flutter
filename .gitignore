@@ -11,7 +11,7 @@ doc/api/
 .env*
 
 # Generated JavaScript files (from dart2js)
-*.dart.js
+
 *.info.json
 *.js
 *.js_
@@ -49,7 +49,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+
 lib64/
 parts/
 sdist/
